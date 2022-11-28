@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 //const clients = client(process.env.DATABASE);
 
 class CreateUserCase {
-  async execute({ name, email, city }: CreateUserDTO) {
+  async handle({ name, email, city }: CreateUserDTO) {
 
     const user = prisma.user.create({
       data: {

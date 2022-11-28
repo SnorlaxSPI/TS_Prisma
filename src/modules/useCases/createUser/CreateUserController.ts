@@ -19,7 +19,7 @@ class CreateUserController {
        return response.status(400).json({ error: "Já existe um e-mail" });
     };
     
-    const user = await createUserCase.execute({ name, email, city });
+    const user = await createUserCase.handle({ name, email, city });
 
     return response.status(201).json(user);
   }
